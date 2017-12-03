@@ -16,7 +16,7 @@ function check_retval()
 {
 	if [ 2 -ne ${#} ];
 	then
-		echo "[WARNING]: Invalid paramters of check_retval!" 1>&2;
+		echo "[WARNING]: Invalid paramters of check_retval!" 1>&2
 		return 1
 	fi
 
@@ -28,14 +28,14 @@ function check_retval()
 		for(i in ret_arr) {
 			if(ret_arr[i] != 0) {
 				printf("[WARNING]: Failure at %s, pipestatus: %s\n", func_name, ret_value) > "/dev/stderr"
-				exit 1;
+				exit 1
 			}
 		}
 	}'
 
 	if [ 0 -ne $? ];
 	then
-		return 255;
+		return 255
 	fi
 
 	return 0
